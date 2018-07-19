@@ -7,7 +7,7 @@ alias cp='cp -i'
 alias gs='git status'
 alias ga='git add -A'
 alias gl="git log --graph --oneline --decorate=full -20 --date=short --format='%C(yellow)%h%C(reset) %C(magenta)[%ad]%C(reset)%C(auto)%d%C(reset) %s %C(cyan)@%an%C(reset)'"
-alias gca='git commit -am'
+alias gca='git add -A && git commit'
 alias gpull='git pull origin master'
 alias gpush='git push origin master'
 alias c='clear'
