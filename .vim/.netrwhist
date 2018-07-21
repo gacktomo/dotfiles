@@ -1,6 +1,6 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/mori/Documents/sharding-simulator'
-let g:netrw_dirhist_2='/Users/mori/Documents/sharding-simulator/js'
-let g:netrw_dirhist_3='/Users/mori/Documents/sharding-simulator'
-let g:netrw_dirhist_4='/Users/mori/Documents/sharding-simulator/js'
+let g:netrw_dirhist_1='/Users/mori/Documents/ehama-date/src'
+let g:netrw_dirhist_2='/Users/mori/Documents/ehama-date/src/pages'
+let g:netrw_dirhist_3='/Users/mori/Documents/ehama-date/src/pages/home'
+let g:netrw_dirhist_4='/Users/mori/Documents/ehama-date'

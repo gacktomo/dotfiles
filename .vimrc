@@ -19,6 +19,8 @@ nnoremap k gk
 imap <C-j> <esc>
 imap jj <esc>
 imap kk <esc>
+map <C-l> gt
+map <C-h> gT
 
 set list listchars=tab:\▸\-
 set expandtab
@@ -41,6 +43,7 @@ Plug 'Shougo/neocomplete.vim'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'itchyny/lightline.vim'
+Plug 'posva/vim-vue'
 call plug#end()
 
 "let g:neocomplete#enable_at_startup = 1
