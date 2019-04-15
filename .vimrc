@@ -33,6 +33,9 @@ set incsearch
 set wrapscan
 set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+set switchbuf+=newtab
+nnoremap <S-p> :tabe **/
+nnoremap <S-f> :vim /hoge/j **/* \| cw
 
 colorscheme molokai
 syntax on
