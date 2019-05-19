@@ -41,13 +41,13 @@ colorscheme molokai
 syntax on
 
 "Install with :PlugInstall.
-call plug#begin('~/.vim/plugged')
-Plug 'Shougo/neocomplete.vim'
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
-Plug 'itchyny/lightline.vim'
-Plug 'posva/vim-vue'
-call plug#end()
+"call plug#begin('~/.vim/plugged')
+"Plug 'Shougo/neocomplete.vim'
+"Plug 'Shougo/neosnippet'
+"Plug 'Shougo/neosnippet-snippets'
+"Plug 'itchyny/lightline.vim'
+"Plug 'posva/vim-vue'
+"call plug#end()
 
 "let g:neocomplete#enable_at_startup = 1
 "let g:neocomplete#enable_smart_case = 1
