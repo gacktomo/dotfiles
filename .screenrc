@@ -3,4 +3,17 @@ bind ^c screen 1
 bind 0 select 10
 screen 1
 escape ^Tt
+defbce on
 term screen-256color
+
+defutf8 on
+defencoding utf8
+encoding utf8 utf8
+termcapinfo xterm* ti@:te@
+
+# Resize window
+bind r eval 'echo "Resize window"' 'command -c resize'
+bind -c resize ^]  command
+bind -c resize k eval 'resize +1' 'command -c resize'
+bind -c resize j eval 'resize -1' 'command -c resize'
+
