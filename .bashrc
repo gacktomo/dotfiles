@@ -18,6 +18,6 @@ else
     PS1="\[\033[36m\]\u@\h\[\033[00m\]:\[\033[01m\]\w\[\033[00m\]\\$ "
 fi
 
-if [[ -z "$STY" ]]; then
-   screen -xRR session_name
-fi
+#if [[ -z "$STY" ]]; then
+#   screen -xRR session_name
+#fi

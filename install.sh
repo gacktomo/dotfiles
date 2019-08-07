@@ -21,6 +21,16 @@ done
 [ -e ~/.gitconfig.local ] || cp ~/dotfiles/.gitconfig.local.template ~/.gitconfig.local
 
 echo "test -r ~/.bashrc && . ~/.bashrc" >> ~/.bash_profile
+
+if [ "$(uname)" == 'Darwin' ]; then
+  brew install bash-completion
+  echo "[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion" >> ~/.bash_profile
+  ln -s /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash /usr/local/etc/bash_completion.d/git-completion.bash
+  exec $SHELL -l
+elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+  OS='Linux'
+fi
+
 cat << END
 
 **************************************************
