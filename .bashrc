@@ -10,6 +10,7 @@ alias gl="git log --graph --oneline --decorate=full -20 --date=short --format='%
 alias gca='git add -A && git commit -m'
 alias gpull='git pull origin master'
 alias gpush='git push origin master'
+alias gcopr='~/dotfiles/gcopr.sh'
 alias c='clear'
 
 if [ $UID -eq 0 ]; then
