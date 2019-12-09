@@ -1,6 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/mori/Documents/ehama-date/src'
-let g:netrw_dirhist_2='/Users/mori/Documents/ehama-date/src/pages'
-let g:netrw_dirhist_3='/Users/mori/Documents/ehama-date/src/pages/home'
-let g:netrw_dirhist_4='/Users/mori/Documents/ehama-date'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/mori/.config/fish/fish'
+let g:netrw_dirhist_2='/Users/mori/.config/fisher'
+let g:netrw_dirhist_3='/Users/mori/.config/fish'
+let g:netrw_dirhist_4='/Users/mori/dotfiles'
+let g:netrw_dirhist_5='/Users/mori'
