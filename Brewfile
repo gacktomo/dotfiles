@@ -3,7 +3,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
-brew tap homebrew/cask-fonts
+tap homebrew/cask-fonts
 
 brew "mas"
 brew "git"
