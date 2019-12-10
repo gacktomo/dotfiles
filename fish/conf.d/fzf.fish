@@ -12,4 +12,3 @@ function fzf_uninstall -e fzf_uninstall
     #     eval (set -e $var)
     # end
 end
-
