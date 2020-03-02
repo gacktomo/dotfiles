@@ -40,14 +40,21 @@ nnoremap <S-f> :vim /hoge/j **/* \| cw
 colorscheme molokai
 syntax on
 
-"Install with :PlugInstall.
-"call plug#begin('~/.vim/plugged')
-"Plug 'Shougo/neocomplete.vim'
-"Plug 'Shougo/neosnippet'
-"Plug 'Shougo/neosnippet-snippets'
-"Plug 'itchyny/lightline.vim'
-"Plug 'posva/vim-vue'
-"call plug#end()
+let mapleader = "\<Space>"
+map <Leader> <Plug>(easymotion-prefix)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+nmap s <Plug>(easymotion-s)
+
+""" Running :PlugInstall command.
+call plug#begin('~/.vim/plugged')
+Plug 'Shougo/neocomplete.vim'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'itchyny/lightline.vim'
+Plug 'posva/vim-vue'
+Plug 'easymotion/vim-easymotion'
+call plug#end()
 
 "let g:neocomplete#enable_at_startup = 1
 "let g:neocomplete#enable_smart_case = 1
