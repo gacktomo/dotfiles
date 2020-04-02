@@ -14,3 +14,4 @@ alias gpull='git pull origin master'
 alias gpush='git push origin master'
 alias gcopr='~/dotfiles/gcopr.sh'
 alias c='clear'
+set -U fish_user_paths  ~/.rbenv/bin /usr/local/bin/flutter/bin ~/.nodebrew/current/bin $fish_user_paths
