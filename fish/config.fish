@@ -1,5 +1,3 @@
-set -U FZF_LEGACY_KEYBINDINGS 0
-fish_vi_key_bindings
 alias rm='rm -i'
 alias ls='ls -FG'
 alias ll='ls -alFG'
