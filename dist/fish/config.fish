@@ -15,4 +15,4 @@ alias gcopr='~/dotfiles/gcopr.sh'
 alias brname='git symbolic-ref --short HEAD'
 
 alias c='clear'
-set -U fish_user_paths  ~/.rbenv/bin /usr/local/bin/flutter/bin ~/.nodebrew/current/bin $fish_user_paths
+set -U fish_user_paths ~/.rbenv/bin /usr/local/bin/flutter/bin ~/.nodebrew/current/bin $fish_user_paths /usr/local/opt/mysql-client/bin

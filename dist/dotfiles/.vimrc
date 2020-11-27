@@ -48,6 +48,7 @@ nmap s <Plug>(easymotion-s)
 
 """ Running :PlugInstall command.
 call plug#begin('~/.vim/plugged')
+Plug 'tomasr/molokai', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'Shougo/neocomplete.vim'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
