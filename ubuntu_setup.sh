@@ -1,12 +1,10 @@
 #!/bin/bash
 
-# setup fish
+# setup fish, ghq
 sudo apt-add-repository ppa:fish-shell/release-3
 sudo apt-get update
-sudo apt-get install fish
-
-#curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-sudo apt-get install fonts-powerline
+sudo apt-get install fish golang fonts-powerline -y
+go get github.com/motemen/ghq
 
 # setup fisher(fish package manager)
 mkdir -p ~/.config/fish/functions

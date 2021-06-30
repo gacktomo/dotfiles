@@ -9,12 +9,14 @@ SETUVAR FZF_TMUX_HEIGHT:40\x25
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
+SETUVAR __fish_initialized:3100
 SETUVAR _fisher_0rax_2F_fish_2D_bd_files:/Users/mori/\x2econfig/fish/functions/bd\x2efish\x1e/Users/mori/\x2econfig/fish/functions/uninstall\x2efish\x1e/Users/mori/\x2econfig/fish/completions/bd\x2efish
 SETUVAR _fisher_decors_2F_fish_2D_ghq_files:/Users/mori/\x2econfig/fish/functions/__ghq_repository_search\x2efish\x1e/Users/mori/\x2econfig/fish/conf\x2ed/ghq_key_bindings\x2efish\x1e/Users/mori/\x2econfig/fish/completions/ghq\x2efish
+SETUVAR _fisher_edc_2F_bass_files:/home/tomo/\x2econfig/fish/functions/__bass\x2epy\x1e/home/tomo/\x2econfig/fish/functions/bass\x2efish
 SETUVAR _fisher_evanlucas_2F_fish_2D_kubectl_2D_completions_files:/Users/mori/\x2econfig/fish/completions/kubectl\x2efish
 SETUVAR _fisher_jethrokuan_2F_fzf_files:/Users/mori/\x2econfig/fish/functions/__fzf_cd\x2efish\x1e/Users/mori/\x2econfig/fish/functions/__fzf_complete\x2efish\x1e/Users/mori/\x2econfig/fish/functions/__fzf_complete_preview\x2efish\x1e/Users/mori/\x2econfig/fish/functions/__fzf_find_file\x2efish\x1e/Users/mori/\x2econfig/fish/functions/__fzf_get_dir\x2efish\x1e/Users/mori/\x2econfig/fish/functions/__fzf_open\x2efish\x1e/Users/mori/\x2econfig/fish/functions/__fzf_parse_commandline\x2efish\x1e/Users/mori/\x2econfig/fish/functions/__fzf_reverse_isearch\x2efish\x1e/Users/mori/\x2econfig/fish/functions/__fzfcmd\x2efish\x1e/Users/mori/\x2econfig/fish/conf\x2ed/fzf\x2efish\x1e/Users/mori/\x2econfig/fish/conf\x2ed/fzf_key_bindings\x2efish
 SETUVAR _fisher_oh_2D_my_2D_fish_2F_theme_2D_bobthefish_files:/Users/mori/\x2econfig/fish/functions/__bobthefish_colors\x2efish\x1e/Users/mori/\x2econfig/fish/functions/__bobthefish_display_colors\x2efish\x1e/Users/mori/\x2econfig/fish/functions/__bobthefish_glyphs\x2efish\x1e/Users/mori/\x2econfig/fish/functions/bobthefish_display_colors\x2efish\x1e/Users/mori/\x2econfig/fish/functions/fish_greeting\x2efish\x1e/Users/mori/\x2econfig/fish/functions/fish_mode_prompt\x2efish\x1e/Users/mori/\x2econfig/fish/functions/fish_prompt\x2efish\x1e/Users/mori/\x2econfig/fish/functions/fish_right_prompt\x2efish\x1e/Users/mori/\x2econfig/fish/functions/fish_title\x2efish
-SETUVAR _fisher_plugins:oh\x2dmy\x2dfish/theme\x2dbobthefish\x1ejethrokuan/fzf\x1edecors/fish\x2dghq\x1eevanlucas/fish\x2dkubectl\x2dcompletions\x1e0rax/fish\x2dbd
+SETUVAR _fisher_plugins:oh\x2dmy\x2dfish/theme\x2dbobthefish\x1ejethrokuan/fzf\x1edecors/fish\x2dghq\x1eevanlucas/fish\x2dkubectl\x2dcompletions\x1e0rax/fish\x2dbd\x1eedc/bass
 SETUVAR fish_color_autosuggestion:969896
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:b294bb
@@ -26,6 +28,7 @@ SETUVAR fish_color_error:cc6666
 SETUVAR fish_color_escape:00a6b2
 SETUVAR fish_color_history_current:\x2d\x2dbold
 SETUVAR fish_color_host:normal
+SETUVAR fish_color_host_remote:yellow
 SETUVAR fish_color_match:\x2d\x2dbackground\x3dbrblue
 SETUVAR fish_color_normal:normal
 SETUVAR fish_color_operator:00a6b2
@@ -34,6 +37,7 @@ SETUVAR fish_color_quote:b5bd68
 SETUVAR fish_color_redirection:8abeb7
 SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
 SETUVAR fish_greeting:Welcome\x20to\x20fish\x2c\x20the\x20friendly\x20interactive\x20shell
