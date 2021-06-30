@@ -3,8 +3,13 @@ Config files for bash and vim, git
 
 ## Usage
 ```
-./install.sh
-./homebrew_setup.sh
+./common_setup.sh
+
+# for MacOS
+./macos_setup.sh
+
+# for Ubuntu
+./ubuntu_setup.sh
 ```
 Install vim plugins at vim command
 ```
