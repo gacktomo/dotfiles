@@ -28,6 +28,14 @@ function clearpath
   end
 end
 
+function nvm
+  bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
+end
+
 clearpath /usr/local/bin
 
-set -x PATH ~/.rbenv/bin /usr/local/bin/flutter/bin ~/.nodebrew/current/bin /usr/local/bin /usr/local/opt/mysql-client/bin $fish_user_paths $PATH
+export PATH="$GOPATH/bin:$PATH"
+set -x GOPATH $HOME/go
+set -x PATH ~/.rbenv/bin /usr/local/bin/flutter/bin ~/.nodebrew/current/bin /usr/local/opt/mysql-client/bin $GOPATH/bin $HOME/.nvm /usr/local/bin $fish_user_paths $PATH
+
+bass source something.bash
