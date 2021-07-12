@@ -30,4 +30,4 @@ end
 
 clearpath /usr/local/bin
 
-set -x PATH /usr/local/bin ~/.rbenv/bin /usr/local/bin/flutter/bin ~/.nodebrew/current/bin $fish_user_paths /usr/local/opt/mysql-client/bin $PATH
+set -x PATH ~/.rbenv/bin /usr/local/bin/flutter/bin ~/.nodebrew/current/bin /usr/local/bin /usr/local/opt/mysql-client/bin $fish_user_paths $PATH
