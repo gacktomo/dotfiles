@@ -1,8 +1,8 @@
 [core]
-	excludesfile = /Users/mori/.gitignore
+	excludesfile = ~/.gitignore
 [user]
 	name = Tomohiro Matsuo
-	email = tomohmat@yahoo-corp.jp
+	email = gacktomo@gmail.com
 [color]
   ui = true
 [alias]

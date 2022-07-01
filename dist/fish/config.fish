@@ -36,6 +36,13 @@ clearpath /usr/local/bin
 
 export PATH="$GOPATH/bin:$PATH"
 set -x GOPATH $HOME/go
-set -x PATH ~/.rbenv/bin /usr/local/bin/flutter/bin ~/.nodebrew/current/bin /usr/local/opt/mysql-client/bin $GOPATH/bin $HOME/.nvm /usr/local/bin $fish_user_paths $PATH
+set -x PATH ~/.rbenv/bin $HOME/.cargo/bin ~/.sdkman/candidates/sbt/current/bin /usr/local/bin/flutter/bin /usr/local/bin/gatling/bin ~/.nodebrew/current/bin /usr/local/opt/mysql-client/bin $GOPATH/bin $HOME/.nvm /usr/local/bin /usr/local/bin/flutter/.pub-cache/bin $fish_user_paths $PATH
 
 bass source something.bash
+
+# Created by `pipx` on 2021-11-14 07:34:33
+set PATH $PATH /Users/tomo/.local/bin
+set PATH $PATH $HOME/.pub-cache/bin
+
+set -x EDITOR /usr/bin/vim
+eval (direnv hook fish)
