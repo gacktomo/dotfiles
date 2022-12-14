@@ -21,6 +21,9 @@ chsh -s /opt/homebrew/bin/fish
 fish -l
 fisher update
 
+# setup asdf(env manager)
+asdf plugin add nodejs
+
 cat << END
 
 **************************************************
