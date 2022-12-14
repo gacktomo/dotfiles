@@ -36,7 +36,9 @@ clearpath /usr/local/bin
 
 export PATH="$GOPATH/bin:$PATH"
 set -x GOPATH $HOME/go
-set -x PATH ~/.rbenv/bin $HOME/.cargo/bin ~/.sdkman/candidates/sbt/current/bin /usr/local/bin/flutter/bin /usr/local/bin/gatling/bin ~/.nodebrew/current/bin /usr/local/opt/mysql-client/bin $GOPATH/bin $HOME/.nvm /usr/local/bin /usr/local/bin/flutter/.pub-cache/bin $fish_user_paths $PATH
+set -x ANDROID_HOME $HOME/Library/Android/sdk
+set -x PATH ~/.rbenv/bin $HOME/.cargo/bin ~/.sdkman/candidates/sbt/current/bin /usr/local/bin/flutter/bin /usr/local/bin/gatling/bin /usr/local/opt/mysql-client/bin $GOPATH/bin /usr/local/bin /usr/local/bin/flutter/.pub-cache/bin $fish_user_paths $PATH
+source /usr/local/opt/asdf/libexec/asdf.fish
 
 bass source something.bash
 
