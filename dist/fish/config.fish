@@ -4,6 +4,7 @@ alias ll='ls -alFG'
 alias ..='cd ..'
 alias mv='mv -i'
 alias cp='cp -i'
+alias g='cd (ghq root)/(ghq list | peco)'
 alias gs='git status'
 alias ga='git add -A'
 alias gl="git log --graph --oneline --decorate=full -20 --date=short --format='%C(yellow)%h%C(reset) %C(magenta)[%ad]%C(reset)%C(auto)%d%C(reset) %s %C(cyan)@%an%C(reset)'"
@@ -48,3 +49,6 @@ set PATH $PATH $HOME/.pub-cache/bin
 
 set -x EDITOR /usr/bin/vim
 eval (direnv hook fish)
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/usr/local/bin/google-cloud-sdk/path.fish.inc' ]; . '/usr/local/bin/google-cloud-sdk/path.fish.inc'; end
