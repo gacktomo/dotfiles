@@ -1,4 +1,5 @@
 set fenc=utf-8
+language C
 set nobackup
 set noswapfile
 set autoread
@@ -14,14 +15,7 @@ set showmatch
 set laststatus=2
 set wildmode=list:longest
 set nowrap
-
-nnoremap j gj
-nnoremap k gk
-imap <C-j> <esc>
-imap jj <esc>
-imap kk <esc>
-map <C-l> gt
-map <C-h> gT
+set nocompatible
 
 set list listchars=tab:\▸\-
 set expandtab
@@ -33,24 +27,43 @@ set incsearch
 set wrapscan
 set hlsearch
 set switchbuf+=newtab
+
+nnoremap j gj
+nnoremap k gk
+imap <C-j> <esc>
+imap jj <esc>
+imap kk <esc>
+map <C-l> gt
+map <C-h> gT
+
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 nnoremap <S-p> :tabe **/*
 nnoremap <S-f> :vim /hoge/j **/* \| cw
 
+if has('termguicolors')
+  set termguicolors
+endif
 colorscheme molokai
 syntax on
+
 let mapleader = "\<Space>"
 
 """ easymotion
-map <Leader> <Plug>(easymotion-prefix)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-nmap s <Plug>(easymotion-s)
+nmap s <Plug>(easymotion-s2)
+
+" GoTo code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gdv :tabe<CR><Plug>(coc-definition)
+"nmap <silent> gdv :vs<CR><Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 """ coc-fzf
 nmap <Leader>f [fzf-p]
 xmap <Leader>f [fzf-p]
-nnoremap <silent> [fzf-p]p     :<C-u>FzfPreviewFromResourcesRpc project_mru git<CR>
+" nnoremap <silent> [fzf-p]p     :<C-u>FzfPreviewFromResourcesRpc project_mru git<CR>
+nnoremap <Leader>p :<C-u>FzfPreviewFromResourcesRpc project_mru git<CR>
 nnoremap <silent> [fzf-p]gs    :<C-u>FzfPreviewGitStatusRpc<CR>
 nnoremap <silent> [fzf-p]ga    :<C-u>FzfPreviewGitActionsRpc<CR>
 nnoremap <silent> [fzf-p]b     :<C-u>FzfPreviewBuffersRpc<CR>
@@ -69,11 +82,8 @@ nnoremap <silent> [fzf-p]l     :<C-u>FzfPreviewLocationListRpc<CR>
 """ Running :PlugInstall command.
 call plug#begin('~/.vim/plugged')
 Plug 'tomasr/molokai', {'do': 'cp colors/* ~/.vim/colors/'}
-Plug 'Shougo/neocomplete.vim'
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
+Plug 'sheerun/vim-polyglot'
 Plug 'itchyny/lightline.vim'
-Plug 'posva/vim-vue'
 Plug 'easymotion/vim-easymotion'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
