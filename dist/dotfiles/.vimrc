@@ -37,8 +37,6 @@ map <C-l> gt
 map <C-h> gT
 
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
-nnoremap <S-p> :tabe **/*
-nnoremap <S-f> :vim /hoge/j **/* \| cw
 
 if has('termguicolors')
   set termguicolors

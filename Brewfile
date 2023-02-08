@@ -19,6 +19,7 @@ brew "tmux"
 brew "jq"
 brew "kubectl"
 brew "kubectx"
+brew "koekeishiya/formulae/yabai"
 
 cask "google-chrome"
 cask "google-japanese-ime"
