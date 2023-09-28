@@ -33,15 +33,19 @@ function nvm
   bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
 end
 
+export TZ=UTC
+set -g theme_date_timezone Asia/Tokyo
+set -g theme_date_format  "+%Y-%m-%d %H:%M:%S"
+
 clearpath /usr/local/bin
 
 export PATH="$GOPATH/bin:$PATH"
 set -x GOPATH $HOME/go
 set -x ANDROID_HOME $HOME/Library/Android/sdk
 set -x PATH ~/.rbenv/bin $HOME/.cargo/bin ~/.sdkman/candidates/sbt/current/bin /usr/local/bin/flutter/bin /usr/local/bin/gatling/bin /usr/local/opt/mysql-client/bin $GOPATH/bin /usr/local/bin /usr/local/bin/flutter/.pub-cache/bin $fish_user_paths $PATH
-source /usr/local/opt/asdf/libexec/asdf.fish
+set -x JAVA_HOME $HOME/.asdf/installs/java/openjdk-17.0.2/
 
-bass source something.bash
+# bass source something.bash
 
 # Created by `pipx` on 2021-11-14 07:34:33
 set PATH $PATH /Users/tomo/.local/bin
@@ -57,3 +61,5 @@ if [ -f '/usr/local/bin/google-cloud-sdk/path.fish.inc' ]; . '/usr/local/bin/goo
 set -gx PNPM_HOME "/Users/tomo/Library/pnpm"
 set -gx PATH "$PNPM_HOME" $PATH
 # pnpm end
+
+source /usr/local/opt/asdf/libexec/asdf.fish
