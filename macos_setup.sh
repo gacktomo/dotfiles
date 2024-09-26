@@ -4,7 +4,12 @@
 if ! command -v brew >/dev/null 2>&1; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   echo
+  printf '%s\n' '' 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/matsuo/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
+
+sudo softwareupdate --install-rosetta
+sudo xcodebuild -license accept
 
 brew update
 brew bundle

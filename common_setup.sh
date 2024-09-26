@@ -7,7 +7,7 @@ cd $THIS_DIR
 echo "start setup..."
 # Copy dotfiles
 for f in dist/dotfiles/.??*; do
-    ln -snfv ~/dotfiles/dist/dotfiles/"$f" ~/
+    ln -snfv ~/dotfiles/"$f" ~/
 done
 
 [ -e ~/.gitconfig.local ] || cp ~/dotfiles/.gitconfig.local.template ~/.gitconfig.local
