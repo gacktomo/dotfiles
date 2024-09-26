@@ -44,6 +44,7 @@ set -x GOPATH $HOME/go
 set -x ANDROID_HOME $HOME/Library/Android/sdk
 set -x PATH ~/.rbenv/bin $HOME/.cargo/bin ~/.sdkman/candidates/sbt/current/bin /usr/local/bin/flutter/bin /usr/local/bin/gatling/bin /usr/local/opt/mysql-client/bin $GOPATH/bin /usr/local/bin /usr/local/bin/flutter/.pub-cache/bin $fish_user_paths $PATH
 set -x JAVA_HOME $HOME/.asdf/installs/java/openjdk-17.0.2/
+set -x ASDF_DIR /usr/local/Cellar/asdf/0.14.1/libexec
 
 # bass source something.bash
 
@@ -61,5 +62,7 @@ if [ -f '/usr/local/bin/google-cloud-sdk/path.fish.inc' ]; . '/usr/local/bin/goo
 set -gx PNPM_HOME "/Users/tomo/Library/pnpm"
 set -gx PATH "$PNPM_HOME" $PATH
 # pnpm end
+
+set -gx PATH $HOME/.asdf/shims $PATH
 
 source /usr/local/opt/asdf/libexec/asdf.fish

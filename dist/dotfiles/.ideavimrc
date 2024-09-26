@@ -54,8 +54,8 @@ set softtabstop=2
 " ------------------------------------
 
 "x キー削除でデフォルトレジスタに入れない
-nnoremap x "_x
-vnoremap x "_x
+"nnoremap x "_x
+"vnoremap x "_x
 
 " ヤンクでクリップボードにコピー
 noremap "+y "*y
@@ -72,3 +72,6 @@ imap jj <esc>
 imap kk <esc>
 map <C-l> gt
 map <C-h> gT
+
+set easymotion
+nmap s <Plug>(easymotion-s2)
