@@ -15,3 +15,6 @@ Install vim plugins at vim command
 ```
 :PlugInstall
 ```
+
+## Note
+- Macの通知が来ない場合はミラーリング時通知設定を確認
