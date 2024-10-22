@@ -1,5 +1,6 @@
 [core]
 	excludesfile = ~/.gitignore
+	autocrlf = input
 [user]
 	name = Tomohiro Matsuo
 	email = gacktomo@gmail.com

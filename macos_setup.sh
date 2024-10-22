@@ -46,10 +46,10 @@ defaults write com.apple.finder ShowPathbar -bool true
 # Display battery level in the menu bar
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 # Display date, day, and time in the menu bar
-defaults write com.apple.menuextra.clock DateFormat -string 'EEE d MMM HH:mm'
+defaults write com.apple.menuextra.clock DateFormat -string 'EEE d MMM HH:mm:ss'
 # Increase keyboard initial delay
 # warning: less than 10 is not recommended. too fast to type
-defaults write -g InitialKeyRepeat -int 15
+defaults write -g InitialKeyRepeat -int 20
 # Increase keyboard repeat rate
 defaults write -g KeyRepeat -int 1.5
 # Increase mouse speed
