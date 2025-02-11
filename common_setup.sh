@@ -23,6 +23,10 @@ mkdir -p ~/.vim/autoload
 mkdir -p ~/.vim/colors
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+# Copy karabiner files
+mkdir -p ~/.config/karabiner
+ln -sf ~/dotfiles/dist/karabiner/karabiner.json ~/.config/karabiner
+
 # bash
 echo "test -r ~/.bashrc && . ~/.bashrc" >> ~/.bash_profile
 #if [ "$(uname)" == 'Darwin' ]; then
