@@ -14,7 +14,6 @@ alias gpush='git push origin HEAD'
 alias gco='git checkout'
 alias gcopr='~/dotfiles/gcopr.sh'
 alias brname='git symbolic-ref --short HEAD'
-
 alias c='clear'
 
 function clearpath
