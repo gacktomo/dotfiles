@@ -29,6 +29,12 @@ fisher update
 # setup asdf(env manager)
 asdf plugin add nodejs
 
+# Copy karabiner files
+mkdir -p ~/.config/karabiner
+ln -sf ~/dotfiles/dist/karabiner/karabiner.json ~/.config/karabiner
+ln -sf ~/dotfiles/dist/karabiner/karabiner.edn ~/.config
+goku # karabiner setting
+
 # Mac OS Preferences
 
 ## Remove all apps from the dock

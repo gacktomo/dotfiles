@@ -1,0 +1,41 @@
+{
+	;; layers
+	:simlayers {
+		:layer1 {:key :spacebar}
+		:layer2 {:key :right_command}
+	}
+	:simlayer-threshold 250
+
+	;; main list
+	:main
+	[
+		{:des "L-Cmd tap to eisuu" :rules [[:left_command :left_command nil {:alone :japanese_eisuu}]]}
+		{:des "R-Cmd tap to kana, hold to layer2" :rules [
+			[:right_command ["layer2" 1] nil {:alone :japanese_kana :afterup ["layer2" 0]}]]
+		}
+		{:des "layer1" :rules [
+			[:q :1 :layer1]
+			[:w :2 :layer1]
+			[:e :3 :layer1]
+			[:r :4 :layer1]
+			[:t :5 :layer1]
+			[:a :6 :layer1]
+			[:s :7 :layer1]
+			[:d :8 :layer1]
+			[:f :9 :layer1]
+			[:g :0 :layer1]
+		]}
+		{:des "layer2" :rules [
+			[:q :!S1 :layer2]
+			[:w :!S2 :layer2]
+			[:e :!S3 :layer2]
+			[:r :!S4 :layer2]
+			[:t :!S5 :layer2]
+			[:a :!S6 :layer2]
+			[:s :!S7 :layer2]
+			[:d :!S8 :layer2]
+			[:f :!S9 :layer2]
+			[:g :!S0 :layer2]
+		]}
+	]
+}
