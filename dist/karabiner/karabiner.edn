@@ -1,4 +1,9 @@
 {
+	:devices {
+		:hhkb-bt [{:vendor_id 1278 :product_id 51966}]
+		:internal-keyboard [{:is_built_in_keyboard true}]
+	}
+
 	;; layers
 	:simlayers {
 		:layer1 {:key :spacebar}
@@ -9,21 +14,50 @@
 	;; main list
 	:main
 	[
+		;; layer
 		{:des "L-Cmd tap to eisuu" :rules [[:left_command :left_command nil {:alone :japanese_eisuu}]]}
 		{:des "R-Cmd tap to kana, hold to layer2" :rules [
 			[:right_command ["layer2" 1] nil {:alone :japanese_kana :afterup ["layer2" 0]}]]
 		}
+		{:des "Space tap to space, hold to layer1" :rules [
+			[:spacebar ["layer1" 1] nil {:alone :spacebar :afterup ["layer1" 0]}]]
+		}
+
+		;; mod keys
+		{:des "a hold to Ctrl" :rules [
+			[:a :left_control nil {:alone :a}]]
+		}
+		{:des "z hold to Shift" :rules [
+			[:z :left_shift nil {:alone :z}]]
+		}
+		{:des "q hold to Alt" :rules [
+			[:q :left_option nil {:alone :q}]]
+		}
+		{:des "; hold to Ctrl" :rules [
+			[:semicolon :left_control nil {:alone :semicolon}]]
+		}
+		{:des "/ hold to Shift" :rules [
+			[:slash :left_shift nil {:alone :slash}]]
+		}
+
+		;; {:des "column staggered (内蔵キーボードのみ)" :rules [
+		;; 	[:v :b :internal-keyboard]
+		;; 	[:c :v :internal-keyboard]
+		;; 	[:x :c :internal-keyboard]
+		;; 	[:z :x :internal-keyboard]
+		;; 	[:left_shift :z [:is_built_in_keyboard true]]
+		;; ]}
 		{:des "layer1" :rules [
 			[:q :1 :layer1]
 			[:w :2 :layer1]
 			[:e :3 :layer1]
 			[:r :4 :layer1]
 			[:t :5 :layer1]
-			[:a :6 :layer1]
-			[:s :7 :layer1]
-			[:d :8 :layer1]
-			[:f :9 :layer1]
-			[:g :0 :layer1]
+			[:y :6 :layer1]
+			[:u :7 :layer1]
+			[:i :8 :layer1]
+			[:o :9 :layer1]
+			[:p :0 :layer1]
 		]}
 		{:des "layer2" :rules [
 			[:q :!S1 :layer2]
@@ -31,11 +65,11 @@
 			[:e :!S3 :layer2]
 			[:r :!S4 :layer2]
 			[:t :!S5 :layer2]
-			[:a :!S6 :layer2]
-			[:s :!S7 :layer2]
-			[:d :!S8 :layer2]
-			[:f :!S9 :layer2]
-			[:g :!S0 :layer2]
+			[:y :!S7 :layer2]
+			[:u :!S8 :layer2]
+			[:i :!S9 :layer2]
+			[:o :!S0 :layer2]
+			[:p :!S6 :layer2]
 		]}
 	]
 }
