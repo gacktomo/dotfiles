@@ -1,4 +1,6 @@
 {
+	:profiles {:Default {:default true :alone 150 :held 150 :delay 150} }
+
 	:devices {
 		:hhkb-bt [{:vendor_id 1278 :product_id 51966}]
 		:internal-keyboard [{:is_built_in_keyboard true}]
@@ -15,29 +17,32 @@
 	:main
 	[
 		;; layer
-		{:des "L-Cmd tap to eisuu" :rules [[:left_command :left_command nil {:alone :japanese_eisuu}]]}
+		{:des "Space hold to layer1" :rules [
+			[:spacebar ["layer1" 1] nil {:alone :spacebar :afterup ["layer1" 0]}]]
+		}
+		{:des "L-Cmd tap to eisu, hold to Command" :rules [
+			[:left_command :left_command nil {:alone :japanese_eisuu}]]
+		}
 		{:des "R-Cmd tap to kana, hold to layer2" :rules [
 			[:right_command ["layer2" 1] nil {:alone :japanese_kana :afterup ["layer2" 0]}]]
 		}
-		{:des "Space tap to space, hold to layer1" :rules [
-			[:spacebar ["layer1" 1] nil {:alone :spacebar :afterup ["layer1" 0]}]]
+		{:des "f hold to Ctrl" :rules [
+			[:f nil nil {:alone [{:key :f :halt true}] :held [{:key :left_control :halt true}] :delayed {:canceled [:f]}}]]
 		}
-
-		;; mod keys
-		{:des "a hold to Ctrl" :rules [
-			[:a :left_control nil {:alone :a}]]
+		{:des "d hold to Shift" :rules [
+			[:d nil nil {:alone [{:key :d :halt true}] :held [{:key :left_shift :halt true}] :delayed {:canceled [:d]}}]]
 		}
-		{:des "z hold to Shift" :rules [
-			[:z :left_shift nil {:alone :z}]]
+		{:des "s hold to Alt" :rules [
+			[:s nil nil {:alone [{:key :s :halt true}] :held [{:key :left_option :halt true}] :delayed {:canceled [:s]}}]]
 		}
-		{:des "q hold to Alt" :rules [
-			[:q :left_option nil {:alone :q}]]
+		{:des "j hold to Ctrl" :rules [
+			[:j nil nil {:alone [{:key :j :halt true}] :held [{:key :left_control :halt true}] :delayed {:canceled [:j]}}]]
 		}
-		{:des "; hold to Ctrl" :rules [
-			[:semicolon :left_control nil {:alone :semicolon}]]
+		{:des "k hold to Shift" :rules [
+			[:k nil nil {:alone [{:key :k :halt true}] :held [{:key :left_shift :halt true}] :delayed {:canceled [:k]}}]]
 		}
-		{:des "/ hold to Shift" :rules [
-			[:slash :left_shift nil {:alone :slash}]]
+		{:des "l hold to Alt" :rules [
+			[:l nil nil {:alone [{:key :l :halt true}] :held [{:key :left_option :halt true}] :delayed {:canceled [:l]}}]]
 		}
 
 		;; {:des "column staggered (内蔵キーボードのみ)" :rules [
