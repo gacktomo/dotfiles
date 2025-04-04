@@ -1,5 +1,5 @@
 {
-	:profiles {:Default {:default true :alone 150 :held 150 :delay 150} }
+	:profiles {:Default {:default true :sim 150 :alone 150 :held 150 :delay 150} }
 
 	:devices {
 		:hhkb-bt [{:vendor_id 1278 :product_id 51966}]
@@ -16,6 +16,14 @@
 	;; main list
 	:main
 	[
+		;; 同時押し設定
+		{:des "SD同時押しで英数" :rules [
+			[{:sim [:s :d] nil {:optional [:any] }} :japanese_eisuu]
+		]}
+		{:des "KL同時押しでかな" :rules [
+			[{:sim [:k :l] nil {:optional [:any] }} :japanese_kana]
+		]}
+
 		;; mod keys
 		{:des "Space to backspace, hold to layer1" :rules [
 			[:spacebar ["layer1" 1] [:internal-keyboard] {:alone :delete_or_backspace :afterup ["layer1" 0]}]]
@@ -27,80 +35,74 @@
 			[:right_command :right_command [:internal-keyboard] {:alone :return_or_enter}]]
 		}
 
-		{:des "L-option tap to eisu, hold to Layer2" :rules [
-			[:left_option ["layer2" 1] [:internal-keyboard] {:alone :japanese_eisuu :afterup ["layer2" 0]}]]
-		}
-		{:des "R-option tap to kana, hold to Layer2" :rules [
-			[:right_option ["layer2" 1] [:internal-keyboard] {:alone :japanese_kana :afterup ["layer2" 0]}]]
-		}
+		;; {:des "L-option hold to Layer2" :rules [
+		;; 	[:left_option ["layer2" 1] [:internal-keyboard] {:alone :left_option :afterup ["layer2" 0]}]]
+		;; }
+		;; {:des "R-option hold to Layer2" :rules [
+		;; 	[:right_option ["layer2" 1] [:internal-keyboard] {:alone :right_option :afterup ["layer2" 0]}]]
+		;; }
 
-		{:des "a hold to Ctrl" :rules [
-			[:a nil [:internal-keyboard] { 
-				:alone [{:key :a :halt true}] 
-				:held [{:key :left_control :halt true}] 
-				:delayed {:canceled [:a]}
-			}]
-		]}
-		{:des "d hold to Shift" :rules [
-			[:d nil [:internal-keyboard] {
-				:alone [{:key :d :halt true}] 
-				:held [{:key :left_shift :halt true}] 
-				:delayed {:canceled [:d]}
-			}]
-		]}
-		{:des "s hold to Alt" :rules [
-			[:s nil [:internal-keyboard] {
-				:alone [{:key :s :halt true}] 
-				:held [{:key :left_option :halt true}] 
-				:delayed {:canceled [:s]}
-			}]
-		]}
-		{:des "j hold to Ctrl" :rules [
-			[:j nil [:internal-keyboard] {
-				:alone [{:key :j :halt true}] 
-				:held [{:key :left_control :halt true}] 
-				:delayed {:canceled [:j]}
-			}]
-		]}
-		{:des "k hold to Shift" :rules [
-			[:k nil [:internal-keyboard] {
-				:alone [{:key :k :halt true}] 
-				:held [{:key :left_shift :halt true}] 
-				:delayed {:canceled [:k]}
-			}]
-		]}
-		{:des "l hold to Alt" :rules [
-			[:l nil [:internal-keyboard] {
-				:alone [{:key :l :halt true}] 
-				:held [{:key :left_option :halt true}] 
-				:delayed {:canceled [:l]}
-			}]
-		]}
+		;; {:des "a hold to Ctrl" :rules [
+		;; 	[:a nil [:internal-keyboard] { 
+		;; 		:alone [{:key :a :halt true}] 
+		;; 		:held [{:key :left_control :halt true}] 
+		;; 		:delayed {:canceled [:a]}
+		;; 	}]
+		;; ]}
+		;; {:des "d hold to Shift" :rules [
+		;; 	[:d nil [:internal-keyboard] {
+		;; 		:alone [{:key :d :halt true}] 
+		;; 		:held [{:key :left_shift :halt true}] 
+		;; 		:delayed {:canceled [:d]}
+		;; 	}]
+		;; ]}
+		;; {:des "s hold to Alt" :rules [
+		;; 	[:s nil [:internal-keyboard] {
+		;; 		:alone [{:key :s :halt true}] 
+		;; 		:held [{:key :left_option :halt true}] 
+		;; 		:delayed {:canceled [:s]}
+		;; 	}]
+		;; ]}
+		;; {:des "j hold to Ctrl" :rules [
+		;; 	[:j nil [:internal-keyboard] {
+		;; 		:alone [{:key :j :halt true}] 
+		;; 		:held [{:key :left_control :halt true}] 
+		;; 		:delayed {:canceled [:j]}
+		;; 	}]
+		;; ]}
+		;; {:des "k hold to Shift" :rules [
+		;; 	[:k nil [:internal-keyboard] {
+		;; 		:alone [{:key :k :halt true}] 
+		;; 		:held [{:key :left_shift :halt true}] 
+		;; 		:delayed {:canceled [:k]}
+		;; 	}]
+		;; ]}
+		;; {:des "l hold to Alt" :rules [
+		;; 	[:l nil [:internal-keyboard] {
+		;; 		:alone [{:key :l :halt true}] 
+		;; 		:held [{:key :left_option :halt true}] 
+		;; 		:delayed {:canceled [:l]}
+		;; 	}]
+		;; ]}
 
 		;; disable keys
-		;; {:des "disable keys" :rules [
-		;; 	[:left_control :vk_none nil]
-		;; 	[:left_shift :vk_none nil]
-		;; 	[:left_option :vk_none nil]
-		;; 	[:1 :vk_none nil]
-		;; 	[:2 :vk_none nil]
-		;; 	[:3 :vk_none nil]
-		;; 	[:4 :vk_none nil]
-		;; 	[:5 :vk_none nil]
-		;; 	[:6 :vk_none nil]
-		;; 	[:7 :vk_none nil]
-		;; 	[:8 :vk_none nil]
-		;; 	[:9 :vk_none nil]
-		;; 	[:0 :vk_none nil]
-		;; ]}
-
-		;; {:des "column staggered (内蔵キーボードのみ)" :rules [
-		;; 	[:v :b :internal-keyboard]
-		;; 	[:c :v :internal-keyboard]
-		;; 	[:x :c :internal-keyboard]
-		;; 	[:z :x :internal-keyboard]
-		;; 	[:left_shift :z [:is_built_in_keyboard true]]
-		;; ]}
+		{:des "disable keys" :rules [
+			[:return_or_enter :vk_none [:internal-keyboard]]
+			[:delete_or_backspace :vk_none [:internal-keyboard]]
+			;; [:left_control :vk_none nil]
+			;; [:left_shift :vk_none nil]
+			;; [:left_option :vk_none nil]
+			;; [:1 :vk_none nil]
+			;; [:2 :vk_none nil]
+			;; [:3 :vk_none nil]
+			;; [:4 :vk_none nil]
+			;; [:5 :vk_none nil]
+			;; [:6 :vk_none nil]
+			;; [:7 :vk_none nil]
+			;; [:8 :vk_none nil]
+			;; [:9 :vk_none nil]
+			;; [:0 :vk_none nil]
+		]}
 
 		;; layer
 		{:des "layer1" :rules [
