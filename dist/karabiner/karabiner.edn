@@ -87,8 +87,9 @@
 
 		;; disable keys
 		{:des "disable keys" :rules [
-			[:return_or_enter :vk_none [:internal-keyboard]]
+			;; [:return_or_enter :vk_none [:internal-keyboard]]
 			[:delete_or_backspace :vk_none [:internal-keyboard]]
+			;; [:up :vk_none [:internal-keyboard]]
 			;; [:left_control :vk_none nil]
 			;; [:left_shift :vk_none nil]
 			;; [:left_option :vk_none nil]

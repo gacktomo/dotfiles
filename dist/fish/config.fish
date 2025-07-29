@@ -66,3 +66,4 @@ set -gx PATH "$PNPM_HOME" $PATH
 # pnpm end
 
 set -gx PATH $HOME/.asdf/shims $PATH
+set -gx PATH $HOME/.asdf/installs/nodejs/20.7.0/bin $PATH
