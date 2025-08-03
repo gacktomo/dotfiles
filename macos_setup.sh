@@ -1,40 +1,5 @@
 #!/bin/bash
 
-# install homebrew
-if ! command -v brew >/dev/null 2>&1; then
- /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
- echo
- printf '%s\n' '' 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/matsuo/.zprofile
- eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
-
-sudo softwareupdate --install-rosetta
-sudo xcodebuild -license accept
-
-brew update
-brew bundle
-brew cleanup
-brew cask cleanup
-
-# setup fisher(fish package manager)
-mkdir -p ~/.config/fish/functions
-curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
-
-# set default shell
-sudo sh -c "echo /opt/homebrew/bin/fish >> /etc/shells"
-chsh -s /opt/homebrew/bin/fish
-fish -l
-fisher update
-
-# setup asdf(env manager)
-asdf plugin add nodejs
-
-# Copy karabiner files
-mkdir -p ~/.config/karabiner
-ln -sf ~/dotfiles/dist/karabiner/karabiner.json ~/.config/karabiner
-ln -sf ~/dotfiles/dist/karabiner/karabiner.edn ~/.config
-goku # karabiner setting
-
 # Mac OS Preferences
 
 ## Remove all apps from the dock
@@ -71,15 +36,43 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeF
 defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
 
 ## Swap CapsLock <-> Control
-keyboard_id="$(ioreg -c AppleEmbeddedKeyboard -r | grep -Eiw "VendorID|ProductID" | awk '{ print $4 }' | paste -s -d'-\n' -)-0"
-defaults -currentHost write -g com.apple.keyboard.modifiermapping.${keyboard_id} -array-add "
-<dict>
-  <key>HIDKeyboardModifierMappingDst</key>\
-  <integer>30064771300</integer>\
-  <key>HIDKeyboardModifierMappingSrc</key>\
-  <integer>30064771129</integer>\
-</dict>
-"
+hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x7000000E0}]}'
+
+# install homebrew
+if ! command -v brew >/dev/null 2>&1; then
+ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+ echo
+ printf '%s\n' '' 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/matsuo/.zprofile
+ eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+sudo softwareupdate --install-rosetta
+sudo xcodebuild -license accept
+
+brew update
+brew bundle
+brew cleanup
+
+echo "Setting asdf plugins"
+# setup asdf(env manager)
+asdf plugin add nodejs
+
+echo "Setting karabiner"
+# Copy karabiner files
+mkdir -p ~/.config/karabiner
+ln -sf ~/dotfiles/dist/karabiner/karabiner.json ~/.config/karabiner
+ln -sf ~/dotfiles/dist/karabiner/karabiner.edn ~/.config
+# goku # karabiner setting
+
+# setup fisher(fish package manager)
+mkdir -p ~/.config/fish/functions
+curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+
+# set default shell
+echo "Setting fish"
+sudo sh -c "echo /opt/homebrew/bin/fish >> /etc/shells"
+chsh -s /opt/homebrew/bin/fish
+fish -c "fisher update"
 
 echo -n "You will need reboot macOS. Are you sure? [Y/n]: "
 read ANS
