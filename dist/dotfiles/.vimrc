@@ -41,7 +41,7 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 if has('termguicolors')
   set termguicolors
 endif
-colorscheme molokai
+" colorscheme molokai
 syntax on
 
 let mapleader = "\<Space>"

@@ -51,7 +51,7 @@ source (brew --prefix asdf)/libexec/asdf.fish
 # bass source something.bash
 
 # Created by `pipx` on 2021-11-14 07:34:33
-set PATH $PATH /Users/tomo/.local/bin
+set PATH $PATH $HOME/.local/bin
 set PATH $PATH $HOME/.pub-cache/bin
 
 set -x EDITOR /usr/bin/vim
@@ -61,7 +61,7 @@ set -x EDITOR /usr/bin/vim
 if [ -f '/usr/local/bin/google-cloud-sdk/path.fish.inc' ]; . '/usr/local/bin/google-cloud-sdk/path.fish.inc'; end
 
 # pnpm
-set -gx PNPM_HOME "/Users/tomo/Library/pnpm"
+set -gx PNPM_HOME "$HOME/Library/pnpm"
 set -gx PATH "$PNPM_HOME" $PATH
 # pnpm end
 
