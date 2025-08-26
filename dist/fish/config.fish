@@ -46,9 +46,6 @@ set -x PATH ~/.rbenv/bin $HOME/.cargo/bin ~/.sdkman/candidates/sbt/current/bin /
 
 eval (/opt/homebrew/bin/brew shellenv)
 source (brew --prefix asdf)/libexec/asdf.fish
-# set -x ASDF_DIR /usr/local/Cellar/asdf/0.14.1/libexec
-
-# bass source something.bash
 
 # Created by `pipx` on 2021-11-14 07:34:33
 set PATH $PATH $HOME/.local/bin
@@ -66,4 +63,4 @@ set -gx PATH "$PNPM_HOME" $PATH
 # pnpm end
 
 set -gx PATH $HOME/.asdf/shims $PATH
-set -gx PATH $HOME/.asdf/installs/nodejs/20.7.0/bin $PATH
+rm -rf ~/.asdf/shims && asdf reshim
