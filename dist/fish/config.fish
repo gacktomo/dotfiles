@@ -16,51 +16,44 @@ alias gcopr='~/dotfiles/gcopr.sh'
 alias brname='git symbolic-ref --short HEAD'
 alias c='clear'
 
-function clearpath
-  if test (count $argv) = 1
-    if set -l ind (contains -i -- $argv[1] $PATH)
-      set -e PATH[$ind]
-    end
-  else
-    for a in $argv
-      clearpath $a
-    end
-  end
-end
-
-function nvm
-  bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
-end
-
 export TZ=UTC
 set -g theme_date_timezone Asia/Tokyo
 set -g theme_date_format  "+%Y-%m-%d %H:%M:%S"
 
-clearpath /usr/local/bin
-
-export PATH="$GOPATH/bin:$PATH"
 set -x GOPATH $HOME/go
 set -x ANDROID_HOME $HOME/Library/Android/sdk
-set -x PATH ~/.rbenv/bin $HOME/.cargo/bin ~/.sdkman/candidates/sbt/current/bin /usr/local/bin/flutter/bin /usr/local/bin/gatling/bin /usr/local/opt/mysql-client/bin $GOPATH/bin /usr/local/bin /usr/local/bin/flutter/.pub-cache/bin $fish_user_paths $PATH
-. ~/.asdf/plugins/java/set-java-home.fish
-
-eval (/opt/homebrew/bin/brew shellenv)
-source (brew --prefix asdf)/libexec/asdf.fish
-
-# Created by `pipx` on 2021-11-14 07:34:33
-set PATH $PATH $HOME/.local/bin
-set PATH $PATH $HOME/.pub-cache/bin
-
-set -x EDITOR /usr/bin/vim
-# eval (direnv hook fish)
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/usr/local/bin/google-cloud-sdk/path.fish.inc' ]; . '/usr/local/bin/google-cloud-sdk/path.fish.inc'; end
 
 # pnpm
-set -gx PNPM_HOME "$HOME/Library/pnpm"
-set -gx PATH "$PNPM_HOME" $PATH
-# pnpm end
+set -x PNPM_HOME "$HOME/Library/pnpm"
 
-set -gx PATH $HOME/.asdf/shims $PATH
-rm -rf ~/.asdf/shims && asdf reshim
+# brew
+eval (/opt/homebrew/bin/brew shellenv)
+
+# Set default editor
+set -x EDITOR /usr/bin/vim
+
+# Google Cloud SDK
+if [ -f '/usr/local/bin/google-cloud-sdk/path.fish.inc' ]; . '/usr/local/bin/google-cloud-sdk/path.fish.inc'; end
+
+# Flutter
+export FLUTTER_ROOT="$(asdf where flutter)"
+
+# asdf
+# source (brew --prefix asdf)/libexec/asdf.fish
+# rm -rf ~/.asdf/shims && asdf reshim
+. ~/.asdf/plugins/java/set-java-home.fish
+
+# Add to PATH
+fish_add_path ~/.rbenv/bin
+fish_add_path $HOME/.cargo/bin
+fish_add_path ~/.sdkman/candidates/sbt/current/bin
+fish_add_path /usr/local/bin/flutter/bin
+fish_add_path /usr/local/bin/gatling/bin
+fish_add_path /usr/local/opt/mysql-client/bin
+fish_add_path $GOPATH/bin
+fish_add_path /usr/local/bin
+fish_add_path /usr/local/bin/flutter/.pub-cache/bin
+fish_add_path $HOME/.local/bin
+fish_add_path $HOME/.pub-cache/bin
+fish_add_path $PNPM_HOME
+fish_add_path $HOME/.asdf/shims
