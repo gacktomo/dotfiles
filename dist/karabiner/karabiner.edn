@@ -28,9 +28,12 @@
 		{:des "Caps Lock to Control" :rules [
 			[:caps_lock :left_control]
 		]}
-		{:des "Space to backspace, hold to layer1" :rules [
-			[:spacebar ["layer1" 1] [:internal-keyboard] {:alone :delete_or_backspace :afterup ["layer1" 0]}]]
-		}
+		{:des "Space to backspace" :rules [
+			[:spacebar :delete_or_backspace]
+		]}
+		;; {:des "Space to backspace, hold to layer1" :rules [
+		;; 	[:spacebar ["layer1" 1] [:internal-keyboard] {:alone :delete_or_backspace :afterup ["layer1" 0]}]]
+		;; }
 		{:des "L-Cmd tap to space, hold to Command" :rules [
 			[:left_command :left_command [:internal-keyboard] {:alone :spacebar}]]
 		}
