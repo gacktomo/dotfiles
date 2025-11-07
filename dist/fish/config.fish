@@ -27,7 +27,7 @@ set -x ANDROID_HOME $HOME/Library/Android/sdk
 set -x PNPM_HOME "$HOME/Library/pnpm"
 
 # brew
-eval (/opt/homebrew/bin/brew shellenv)
+# eval (/opt/homebrew/bin/brew shellenv)
 
 # Set default editor
 set -x EDITOR /usr/bin/vim
