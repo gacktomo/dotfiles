@@ -1,7 +1,7 @@
 tap "homebrew/bundle"
 tap "homebrew/services"
 
-brew "mas"
+# brew "mas"
 brew "git"
 brew "fish"
 brew "peco"
@@ -14,6 +14,11 @@ brew "tmux"
 brew "jq"
 brew "direnv"
 brew "yqrashawn/goku/goku"
+brew "neovim"
+brew "font-hackgen"
+brew "font-hackgen-nerd"
+brew "ripgrep"
+brew "fd"
 
 cask "font-cica"
 cask "font-powerline-symbols"
@@ -36,5 +41,5 @@ cask "nikitabobko/tap/aerospace"
 # cask "blender"
 # cask "unity-hub"
 
-mas "The Unarchiver", id: 425424353
+# mas "The Unarchiver", id: 425424353
 # mas "Xcode", id: 497799835

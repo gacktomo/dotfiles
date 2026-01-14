@@ -57,3 +57,5 @@ fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.pub-cache/bin
 fish_add_path $PNPM_HOME
 fish_add_path $HOME/.asdf/shims
+fish_add_path $HOME/.shorebird/bin
+fish_add_path $HOME/Library/Android/sdk/platform-tools/
