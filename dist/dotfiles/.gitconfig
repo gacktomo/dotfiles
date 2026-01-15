@@ -3,7 +3,7 @@
 	autocrlf = input
 	ignorecase = false
 [user]
-	name = Tomohiro Matsuo
+	name = tmatsuo
 	email = gacktomo@gmail.com
 [color]
   ui = true
