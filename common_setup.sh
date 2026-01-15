@@ -18,6 +18,9 @@ ln -sf ~/dotfiles/dist/fish/config.fish ~/.config/fish
 ln -sf ~/dotfiles/dist/fish/fish_plugins ~/.config/fish
 ln -sf ~/dotfiles/dist/fish/fish_variables ~/.config/fish
 
+# Copy nvim files
+ln -s ~/dotfiles/dist/nvim ~/.config/nvim
+
 # Install vim plug
 mkdir -p ~/.vim/autoload
 mkdir -p ~/.vim/colors
