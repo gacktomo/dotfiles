@@ -19,5 +19,4 @@ SETUVAR _fisher_oh_2D_my_2D_fish_2F_theme_2D_bobthefish_files:\x7e/\x2econfig/fi
 SETUVAR _fisher_plugins:oh\x2dmy\x2dfish/theme\x2dbobthefish\x1ejethrokuan/fzf\x1edecors/fish\x2dghq\x1eevanlucas/fish\x2dkubectl\x2dcompletions\x1e0rax/fish\x2dbd\x1eedc/bass
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_greeting:Welcome\x20to\x20fish\x2c\x20the\x20friendly\x20interactive\x20shell
-SETUVAR fish_key_bindings:fish_default_key_bindings
 SETUVAR fish_user_paths:/Users/matsuo/Library/Android/sdk/platform\x2dtools\x1e/Users/matsuo/\x2easdf/shims\x1e/Users/matsuo/Library/pnpm\x1e/Users/matsuo/\x2elocal/bin\x1e/usr/local/bin\x1e/Users/matsuo/go/bin
