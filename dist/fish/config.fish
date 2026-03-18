@@ -32,6 +32,9 @@ set -x PNPM_HOME "$HOME/Library/pnpm"
 # Set default editor
 set -x EDITOR /usr/bin/vim
 
+# Github CLI
+set -gx GITHUB_PERSONAL_ACCESS_TOKEN (gh auth token)
+
 # Google Cloud SDK
 if [ -f '/usr/local/bin/google-cloud-sdk/path.fish.inc' ]; . '/usr/local/bin/google-cloud-sdk/path.fish.inc'; end
 
@@ -42,6 +45,10 @@ export FLUTTER_ROOT="$(asdf where flutter)"
 # source (brew --prefix asdf)/libexec/asdf.fish
 # rm -rf ~/.asdf/shims && asdf reshim
 . ~/.asdf/plugins/java/set-java-home.fish
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
 
 # Add to PATH
 fish_add_path ~/.rbenv/bin
