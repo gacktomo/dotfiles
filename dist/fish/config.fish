@@ -18,7 +18,7 @@ alias c='clear'
 
 export TZ=UTC
 set -g theme_date_timezone Asia/Tokyo
-set -g theme_date_format  "+%Y-%m-%d %H:%M:%S"
+set -g theme_date_format "+%Y-%m-%d %H:%M:%S"
 
 set -x GOPATH $HOME/go
 set -x ANDROID_HOME $HOME/Library/Android/sdk
@@ -36,10 +36,14 @@ set -x EDITOR /usr/bin/vim
 set -gx GITHUB_PERSONAL_ACCESS_TOKEN (gh auth token)
 
 # Google Cloud SDK
-if [ -f '/usr/local/bin/google-cloud-sdk/path.fish.inc' ]; . '/usr/local/bin/google-cloud-sdk/path.fish.inc'; end
+if [ -f '/usr/local/bin/google-cloud-sdk/path.fish.inc' ]
+    . '/usr/local/bin/google-cloud-sdk/path.fish.inc'
+end
 
 # Flutter
-export FLUTTER_ROOT="$(asdf where flutter)"
+if asdf where flutter &>/dev/null
+    export FLUTTER_ROOT="$(asdf where flutter)"
+end
 
 # asdf
 # source (brew --prefix asdf)/libexec/asdf.fish

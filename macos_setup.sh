@@ -54,9 +54,10 @@ brew bundle
 brew cleanup
 
 echo "Setting asdf plugins"
-# setup asdf(env manager)
+# bunsetup asdf(env manager)
 asdf plugin add nodejs
 asdf plugin add bun
+asdf plugin add java
 
 echo "Setting karabiner"
 # Copy karabiner files
