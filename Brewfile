@@ -14,6 +14,7 @@ brew "tmux"
 brew "jq"
 brew "direnv"
 brew "yqrashawn/goku/goku"
+brew "go-task"
 
 # nvim deps
 brew "neovim"
@@ -37,6 +38,7 @@ cask "iterm2"
 cask "raycast"
 cask "zoom"
 cask "nikitabobko/tap/aerospace"
+cask "claude-code"
 
 # cask "vlc"
 # cask "cyberduck"

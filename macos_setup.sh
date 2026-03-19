@@ -32,18 +32,18 @@ defaults write com.apple.AppleMultitouchTrackpad Clicking -bool "true"
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool "true"
 defaults -currentHost write -g com.apple.mouse.tapBehavior -bool "true"
 ## Drag with three finger
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true && \
-defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true &&
+  defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
 
 ## Swap CapsLock <-> Control
 hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x7000000E0}]}'
 
 # install homebrew
 if ! command -v brew >/dev/null 2>&1; then
- /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
- echo
- printf '%s\n' '' 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/matsuo/.zprofile
- eval "$(/opt/homebrew/bin/brew shellenv)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo
+  printf '%s\n' '' 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>/Users/matsuo/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 sudo softwareupdate --install-rosetta
@@ -56,6 +56,7 @@ brew cleanup
 echo "Setting asdf plugins"
 # setup asdf(env manager)
 asdf plugin add nodejs
+asdf plugin add bun
 
 echo "Setting karabiner"
 # Copy karabiner files
@@ -77,15 +78,16 @@ fish -c "fisher update"
 echo -n "You will need reboot macOS. Are you sure? [Y/n]: "
 read ANS
 
-case $ANS in "" | [Yy]* )
-	# Yes
-	launchctl bootout user/$(id -u)
-	;; * )
-	# No
-	;;
+case $ANS in "" | [Yy]*)
+  # Yes
+  launchctl bootout user/$(id -u)
+  ;;
+*)
+  # No
+  ;;
 esac
 
-cat << END
+cat <<END
 
 **************************************************
 MacOS setting finish!
