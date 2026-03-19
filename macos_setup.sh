@@ -59,6 +59,12 @@ asdf plugin add nodejs
 asdf plugin add bun
 asdf plugin add java
 
+echo "Setting claude"
+mkdir -p ~/.claude
+ln -sf ~/dotfiles/dist/claude/settings.json ~/.claude/settings.json
+ln -sf ~/dotfiles/dist/claude/commands ~/.claude/commands
+ln -sf ~/dotfiles/dist/claude/skills ~/.claude/skills
+
 echo "Setting karabiner"
 # Copy karabiner files
 mkdir -p ~/.config/karabiner
