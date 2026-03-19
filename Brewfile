@@ -15,6 +15,8 @@ brew "jq"
 brew "direnv"
 brew "yqrashawn/goku/goku"
 brew "go-task"
+brew "gh"
+brew "awscli"
 
 # nvim deps
 brew "neovim"
