@@ -55,31 +55,24 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "Space to backspace, hold to layer1",
+        "description" : "Caps Lock to Control",
         "manipulators" : [ {
-          "to_if_alone" : [ {
-            "key_code" : "delete_or_backspace"
+          "from" : {
+            "key_code" : "caps_lock"
+          },
+          "to" : [ {
+            "key_code" : "left_control"
           } ],
-          "to_after_key_up" : [ {
-            "set_variable" : {
-              "name" : "layer1",
-              "value" : 0
-            }
-          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "Space to backspace",
+        "manipulators" : [ {
           "from" : {
             "key_code" : "spacebar"
           },
           "to" : [ {
-            "set_variable" : {
-              "name" : "layer1",
-              "value" : 1
-            }
-          } ],
-          "conditions" : [ {
-            "identifiers" : [ {
-              "is_built_in_keyboard" : true
-            } ],
-            "type" : "device_if"
+            "key_code" : "delete_or_backspace"
           } ],
           "type" : "basic"
         } ]

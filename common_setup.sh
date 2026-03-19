@@ -6,7 +6,7 @@ cd $THIS_DIR
 
 echo "start setup..."
 # Copy dotfiles
-for f in dist/dotfiles/.??*; do
+for f in config/dotfiles/.??*; do
     ln -snfv ~/dotfiles/"$f" ~/
 done
 
@@ -14,12 +14,12 @@ done
 
 # Copy fish files
 mkdir -p ~/.config/fish
-ln -sf ~/dotfiles/dist/fish/config.fish ~/.config/fish
-ln -sf ~/dotfiles/dist/fish/fish_plugins ~/.config/fish
-ln -sf ~/dotfiles/dist/fish/fish_variables ~/.config/fish
+ln -sf ~/dotfiles/config/fish/config.fish ~/.config/fish
+ln -sf ~/dotfiles/config/fish/fish_plugins ~/.config/fish
+ln -sf ~/dotfiles/config/fish/fish_variables ~/.config/fish
 
 # Copy nvim files
-ln -s ~/dotfiles/dist/nvim ~/.config/nvim
+ln -s ~/dotfiles/config/nvim ~/.config/nvim
 
 # Install vim plug
 mkdir -p ~/.vim/autoload
