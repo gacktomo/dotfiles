@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/omatsu/.claude/plugins/marketplaces/claude-plugins-official/plugins/example-plugin/commands/**)",
+      "Bash(/dev/null cat:*)",
+      "Bash(claude plj)"
+    ]
+  }
+}

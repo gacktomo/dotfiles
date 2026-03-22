@@ -41,6 +41,7 @@ cask "zoom"
 cask "nikitabobko/tap/aerospace"
 cask "claude-code"
 cask "cmux"
+cask "amical"
 
 # cask "vlc"
 # cask "cyberduck"

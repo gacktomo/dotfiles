@@ -1,4 +1,5 @@
 ---
+name: morning
 description: 本日の朝の日報マークダウンを生成・保存する
 argument-hint: （省略可）特記事項や今日の目標
 ---
