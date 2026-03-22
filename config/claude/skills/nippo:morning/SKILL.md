@@ -1,10 +1,10 @@
 ---
-name: morning
+name: nippo:morning
 description: 本日の朝の日報マークダウンを生成・保存する
 argument-hint: （省略可）特記事項や今日の目標
 ---
 
-# 朝の日報生成 (export-morning)
+# 朝の日報生成 (nippo:morning)
 
 `~/.claude/nippo/tasks.md` を元に、本日の朝日報を生成します。
 

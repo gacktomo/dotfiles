@@ -1,10 +1,10 @@
 ---
-name: evening
+name: nippo:evening
 description: 本日の夕方の日報マークダウンを生成・保存する
 argument-hint: （省略可）特記事項や振り返りコメント
 ---
 
-# 夕方の日報生成 (export-evening)
+# 夕方の日報生成 (nippo:evening)
 
 `~/.claude/nippo/tasks.md` の完了状況と作業ログを元に、本日の夕日報を生成します。
 

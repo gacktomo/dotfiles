@@ -1,10 +1,10 @@
 ---
-name: add
+name: nippo:add
 description: タスクを日報TODOリストに追加する
 argument-hint: タスクの説明（例: "search-spec ツールの実装"）
 ---
 
-# タスク追加 (add-target)
+# タスク追加 (nippo:add)
 
 タスクを `~/.claude/nippo/tasks.md` に追加します。
 

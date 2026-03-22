@@ -1,5 +1,5 @@
 ---
-name: list
+name: nippo:list
 description: タスクの一覧を確認する
 argument-hint: （省略可）フィルター条件（例: "プロジェクト名", "完了済み"）
 ---
