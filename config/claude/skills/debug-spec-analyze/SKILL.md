@@ -27,6 +27,8 @@ time ADET_USER_ID=test-user \
   bun --env-file=.env src/analyze-spec/index.ts \
   > "$LOG_FILE" 2>&1
 echo "Exit code: $?"
+grep '"tag":"request_metrics"' "$LOG_FILE" \
+  | jq -r '.args[0] | "総コスト: \(.totalCost)¢ / 所要時間(AI): \(.totalDurationSec)秒 / コール数: \(.totalCallCount)"'
 ```
 
 ### 注意事項
