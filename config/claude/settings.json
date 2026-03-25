@@ -18,7 +18,13 @@
       "Bash(bun run *)",
       "Bash(bun typecheck)",
       "Bash(bun build)",
-      "Bash(bun format)"
+      "Bash(bun format)",
+      "Bash(git log *)",
+      "Bash(git diff *)",
+      "Bash(git status *)",
+      "Bash(git branch *)",
+      "Bash(git show *)",
+      "Bash(git stash *)"
     ],
     "deny": [
       "Read(./.env)",
