@@ -17,13 +17,13 @@ LOG_FILE="/tmp/tenpla-core-ProjectSpecification_$(date +%Y%m%d_%H%M%S).log"
 echo "Log file: $LOG_FILE"
 time ADET_USER_ID=test-user \
   ADET_PROJECT_ID=test-project \
-  LOCAL_PROJECT_PATH=/Users/omatsu/ghq/github.com/Accel-Hack/tenpla-core \
+  DEBUG_LOCAL_PROJECT_PATH=/Users/omatsu/ghq/github.com/Accel-Hack/tenpla-core \
   PROJECT_OVERVIEW_URL=http://127.0.0.1:8080/tenpla-core-PROJECT_OVERVIEW.md \
   SPEC_SNAPSHOT_URL=http://127.0.0.1:8080/tenpla-core-ProjectSpecification.json \
-  SPEC_SECTIONS=screen \
+  DEBUG_SPEC_SECTIONS=screen \
   GIT_DIFF_BASE=main \
   GIT_DIFF_HEAD=diff-test \
-  DETAIL_LIMIT=1 \
+  DEBUG_DETAIL_LIMIT=1 \
   bun --env-file=.env src/analyze-spec/index.ts \
   > "$LOG_FILE" 2>&1
 echo "Exit code: $?"
