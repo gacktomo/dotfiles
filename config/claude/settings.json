@@ -1,6 +1,7 @@
 {
   "permissions": {
     "allow": [
+      "Read(~/*)",
       "Bash(gh pr list)",
       "Bash(git show-ref)",
       "Bash(grep *)",
@@ -11,7 +12,7 @@
       "Bash(jq *)",
       "Bash(ls *)",
       "Bash(echo *)",
-      "Read(~/*)",
+      "Bash(xargs *)",
       "Bash(npm run lint)",
       "Bash(npm run test *)",
       "Bash(bun ci)",
