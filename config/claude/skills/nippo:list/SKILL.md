@@ -2,6 +2,7 @@
 name: nippo:list
 description: タスクの一覧を確認する
 argument-hint: （省略可）フィルター条件
+model: haiku
 ---
 
 # タスク一覧表示 (nippo:list)

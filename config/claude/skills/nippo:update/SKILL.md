@@ -2,6 +2,7 @@
 name: nippo:update
 description: 当日の朝日報の作業進捗メモセクションを更新する
 argument-hint: 更新内容（例: "Spec差分PR提出完了", "DBのSpec調査中"）
+model: haiku
 ---
 
 # 作業進捗メモ更新 (nippo:update)

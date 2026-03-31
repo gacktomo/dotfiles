@@ -2,6 +2,7 @@
 name: nippo:evening
 description: 本日の夕方の日報マークダウンを生成・保存する
 argument-hint: （省略可）特記事項や振り返りコメント
+model: haiku
 ---
 
 # 夕方の日報生成 (nippo:evening)
