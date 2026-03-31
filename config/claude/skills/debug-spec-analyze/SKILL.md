@@ -23,7 +23,6 @@ time ADET_USER_ID=test-user \
   DEBUG_SPEC_SECTIONS=screen \
   GIT_DIFF_BASE=main \
   GIT_DIFF_HEAD=diff-test \
-  DEBUG_DETAIL_LIMIT=1 \
   bun --env-file=.env src/analyze-spec/index.ts \
   > "$LOG_FILE" 2>&1
 echo "Exit code: $?"
@@ -36,6 +35,7 @@ grep '"tag":"request_metrics"' "$LOG_FILE" \
 - 実行前に作業ディレクトリが ADeT-AI プロジェクトルートであることを確認する
 - stdout/stderr を `2>&1` でまとめてログファイルに保存する（Bunのエラーも捕捉するため）
 - ログ出力は大量になるため、コンソール出力は省略し `$LOG_FILE` のパスをユーザーに伝える
+- 詳細実行数を絞る必要がある場合はDEBUG_DETAIL_LIMIT=1を指定すること
 
 ## ログの確認
 

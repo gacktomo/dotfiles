@@ -2,6 +2,9 @@
   "permissions": {
     "allow": [
       "Read(~/*)",
+      "Read(.claude/*)",
+      "Write(~/.claude/nippo/*)",
+      "Skill(*)",
       "Bash(gh pr list)",
       "Bash(git show-ref)",
       "Bash(grep *)",
@@ -11,6 +14,7 @@
       "Bash(cat *)",
       "Bash(jq *)",
       "Bash(ls *)",
+      "Bash(du *)",
       "Bash(echo *)",
       "Bash(xargs *)",
       "Bash(npm run lint)",
