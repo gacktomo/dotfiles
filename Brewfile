@@ -17,6 +17,7 @@ brew "yqrashawn/goku/goku"
 brew "go-task"
 brew "gh"
 brew "awscli"
+brew "tree"
 
 # nvim deps
 brew "neovim"
