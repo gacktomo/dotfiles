@@ -19,7 +19,8 @@ time ADET_USER_ID=test-user \
   ADET_PROJECT_ID=00000000-0000-0000-0000-000000000001 \
   DEBUG_LOCAL_PROJECT_PATH=/Users/omatsu/ghq/github.com/Accel-Hack/tenpla-core \
   PROJECT_OVERVIEW_URL=http://127.0.0.1:8080/tenpla-core-PROJECT_OVERVIEW.md \
-  SPEC_SNAPSHOT_URL=http://127.0.0.1:8080/tenpla-core-ProjectSpecification.json \
+  SPEC_SNAPSHOT_URL=http://127.0.0.1:8080/tenpla-core-ProjectSpecification-v2.json \
+  SPEC_AGENT_VERSION=0.0.2 \
   DEBUG_SPEC_SECTIONS=screen \
   GIT_DIFF_BASE=main \
   GIT_DIFF_HEAD=diff-test \
@@ -36,7 +37,6 @@ grep '"tag":"request_metrics"' "$LOG_FILE" \
 - stdout/stderr を `2>&1` でまとめてログファイルに保存する（Bunのエラーも捕捉するため）
 - ログ出力は大量になるため、コンソール出力は省略し `$LOG_FILE` のパスをユーザーに伝える
 - 詳細実行数を絞る必要がある場合はDEBUG_DETAIL_LIMIT=1を指定すること
-- SPEC_AGENT_VERSIONを0.0.1または0.0.2と指定することでagentバージョンを変更できる
 
 ## ログの確認
 
