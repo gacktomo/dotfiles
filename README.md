@@ -1,25 +1,7 @@
 # dotfiles
 Config files for bash and vim, git
 
-## Usage
-```
-./common_setup.sh
-
-# for MacOS
-./macos_setup.sh
-
-# for Ubuntu
-./ubuntu_setup.sh
-```
-Install vim plugins at vim command
-```
-:PlugInstall
-```
-
-## Usage (mise bootstrap) — 移行中
-
-`mise.toml` に上記スクリプトの内容を宣言的に書き直したもの。既存スクリプトと並存しており、
-どちらを使ってもよい。
+## Usage (mise bootstrap)
 
 ```
 brew install mise
@@ -28,6 +10,7 @@ mise bootstrap status   # 現在との差分
 mise bootstrap --dry-run
 mise bootstrap
 ```
+vim プラグインは vim で `:PlugInstall`。
 
 新マシンでは `mise bootstrap --from github.com/tmatsuo/dotfiles` で一発。
 
@@ -49,12 +32,11 @@ git 管理しない。過去の未使用プロファイル `Layered` は削除�
 
 ### mise.toml でカバーしていないもの
 
-スクリプト側に残しているので、初回は手で実行する。
+初回は手で実行する。
 
 - `sudo softwareupdate --install-rosetta`
 - `sudo xcodebuild -license accept`
 - `sudo sh -c "echo /opt/homebrew/bin/fish >> /etc/shells"` (chsh の前提)
-- aerospace (独自 tap の cask で Ruby 3 が要るため Brewfile 側に残置)
 - fish での mise 有効化。`config.fish` が本リポジトリへの symlink なので
   `[bootstrap.mise_shell_activate]` は使わず、必要なら config.fish に直接書く
 

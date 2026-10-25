@@ -1,9 +1,8 @@
 # mise bootstrap 用の宣言的セットアップ。
-# 既存の common_setup.sh / macos_setup.sh / ubuntu_setup.sh と並存させており、
-# まだどちらを使ってもよい。確認は `mise bootstrap plan`、適用は `mise bootstrap`。
+# 確認は `mise bootstrap plan`、適用は `mise bootstrap`。
 
 #-------------------------------------------------------------------
-# packages: Brewfile + ubuntu_setup.sh の apt 相当
+# packages: brew (macOS) / apt (Linux)
 #-------------------------------------------------------------------
 [bootstrap.packages]
 # CLI (macOS は brew / Linux は apt)
@@ -50,8 +49,8 @@
 "brew-cask:tableplus" = { os = "macos" }
 "brew-cask:raycast" = { os = "macos" }
 "brew-cask:zoom" = { os = "macos" }
-# aerospace は Brewfile に残す: 独自 tap の cask 定義の評価に Ruby 3 が必要で、
-# system ruby 2.6 だと status/plan ごと失敗するため (`brew bundle` 側で入る)
+# aerospace は post-packages フックで入れる: 独自 tap の cask 定義の評価に Ruby 3 が必要で、
+# system ruby 2.6 だと status/plan ごと失敗するため
 "brew-cask:claude-code" = { os = "macos" }
 "brew-cask:cmux" = { os = "macos" }
 "brew-cask:amical" = { os = "macos" }
@@ -84,7 +83,7 @@ target = "~/.claude"
 "~/.claude/skills" = { mode = "symlink" }
 
 #-------------------------------------------------------------------
-# macOS 設定: macos_setup.sh の defaults write 群
+# macOS 設定: defaults write 群
 #-------------------------------------------------------------------
 [bootstrap.macos.dock]
 apps = []            # persistent-apps を空に
@@ -133,6 +132,10 @@ login_shell = "fish"
 # 宣言的に書けないもの: 毎回走るので冪等に書くこと
 #-------------------------------------------------------------------
 [bootstrap.hooks]
+post-packages = [
+  "[ \"$(uname)\" != Darwin ] || brew list --cask aerospace >/dev/null 2>&1 || brew install --cask nikitabobko/tap/aerospace",
+]
+
 # CapsLock <-> Control (hidutil は mise の管理対象外)
 post-defaults = [
   '''hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x7000000E0}]}' >/dev/null''',
