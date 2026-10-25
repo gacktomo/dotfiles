@@ -151,4 +151,10 @@ post-dotfiles = [
   "goku",
 ]
 
+# skills CLI のグローバル lock (home/.agents/.skill-lock.json) にあるスキルを Claude Code に入れる。
+# lock から一括復元するコマンドが無いので、未導入のものだけ add し直す
+post-tools = [
+  '''jq -r '.skills | to_entries[] | "\(.value.source) \(.key)"' ~/.agents/.skill-lock.json | while read -r src name; do [ -e ~/.claude/skills/"$name" ] || mise x -- npx -y skills add "$src" -g -a claude-code -y -s "$name" </dev/null; done''',
+]
+
 final = "fish -c 'fisher update' || true"

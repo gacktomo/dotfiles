@@ -1,1 +1,14 @@
 .claude/worktrees/
+
+# 自作のスキルだけ管理。外部のものは synced/ (claude.ai 同期) か
+# home/.agents/.skill-lock.json (skills CLI) から復元する
+claude/skills/*
+!claude/skills/.gitkeep
+!claude/skills/app-bootstrap/
+!claude/skills/cmux-control/
+!claude/skills/debug-spec-analyze/
+!claude/skills/fix-conflict/
+!claude/skills/nippo:*/
+!claude/skills/pr-comment-check/
+!claude/skills/pr-create/
+!claude/skills/saas-analysis/
