@@ -61,16 +61,13 @@ asdf plugin add java
 
 echo "Setting claude"
 mkdir -p ~/.claude
-ln -sf ~/dotfiles/config/claude/settings.json ~/.claude/settings.json
-ln -sf ~/dotfiles/config/claude/commands ~/.claude/commands
-ln -sf ~/dotfiles/config/claude/skills ~/.claude/skills
+ln -sf ~/dotfiles/claude/settings.json ~/.claude/settings.json
+ln -sf ~/dotfiles/claude/skills ~/.claude/skills
 
 echo "Setting karabiner"
-# Copy karabiner files
-mkdir -p ~/.config/karabiner
-ln -sf ~/dotfiles/config/karabiner/karabiner.json ~/.config/karabiner
-ln -sf ~/dotfiles/config/karabiner/karabiner.edn ~/.config
-# goku # karabiner setting
+# karabiner.json は karabiner.edn から goku が生成するので配置しない
+ln -sf ~/dotfiles/config/karabiner.edn ~/.config
+goku
 
 # setup fisher(fish package manager)
 mkdir -p ~/.config/fish/functions

@@ -6,11 +6,10 @@ cd $THIS_DIR
 
 echo "start setup..."
 # Copy dotfiles
-for f in config/dotfiles/.??*; do
+for f in home/.??*; do
     ln -snfv ~/dotfiles/"$f" ~/
 done
 
-[ -e ~/.gitconfig.local ] || cp ~/dotfiles/.gitconfig.local.template ~/.gitconfig.local
 
 # Copy fish files
 mkdir -p ~/.config/fish
