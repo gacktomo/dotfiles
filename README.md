@@ -30,6 +30,27 @@ vim プラグインは vim で `:PlugInstall`。
 git 管理しない。過去の未使用プロファイル `Layered` は削除済み
 （`git show 6da6fef:config/karabiner/karabiner.json` で取り出せる）。
 
+### Claude Code のスキル
+
+`claude/skills/` は出どころで管理方法が分かれる。`.gitignore` は許可リスト方式で、自作のものだけ git に入る。
+
+| 種類 | 管理方法 |
+|---|---|
+| 自作 | git 管理。`.gitignore` に `!claude/skills/<名前>/` を足す（足さないと黙って ignore される） |
+| skills CLI で入れたもの | `home/.agents/.skill-lock.json`（`~/.agents/.skill-lock.json` の実体）に記録。本体は ignore |
+| `synced/` | claude.ai から自動同期。ignore |
+| プラグイン | `~/.claude/plugins/` に入るので `claude/skills/` とは無関係 |
+
+skills CLI で追加するときは Claude Code 向けにグローバルで入れる。lock が更新されるのでそれをコミットする。
+
+```
+npx skills add <owner/repo> -g -a claude-code -s <スキル名> -y
+```
+
+lock から一括で復元するコマンドが無いので、`mise bootstrap` の `post-tools` フックで
+lock を読み、`~/.claude/skills/` に無いスキルだけ `skills add` し直している。
+新マシンでは bootstrap だけで揃う。
+
 ### mise.toml でカバーしていないもの
 
 初回は手で実行する。
